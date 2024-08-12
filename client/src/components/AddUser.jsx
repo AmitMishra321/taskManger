@@ -11,7 +11,7 @@ import { toast, Toaster } from "sonner";
 import { useUpdateUserMutation } from "../redux/slices/api/userApiSlice";
 import { setCredentials } from "../redux/slices/authSlice";
 
-const AddUser = ({ open, setOpen, userData }) => {
+const AddUser = ({ open, setOpen, userData, refetch }) => {
   let defaultValues = userData ?? {};
   const { user } = useSelector((state) => state.auth);
 
@@ -41,6 +41,7 @@ const AddUser = ({ open, setOpen, userData }) => {
       }
       setTimeout(() => {
         setOpen(false);
+        refetch();
       }, 1500);
     } catch (e) {
       toast.error("Something went wrong !!");

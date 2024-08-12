@@ -12,6 +12,7 @@ import {
   useUserActionMutation,
 } from "../redux/slices/api/userApiSlice";
 import { toast } from "sonner";
+import Loading from "../components/Loader";
 
 const Users = () => {
   const [openDialog, setOpenDialog] = useState(false);
@@ -69,6 +70,14 @@ const Users = () => {
     setSelected(el);
     setOpenAction(true);
   };
+
+  if (isLoading) {
+    return (
+      <div className="py-10">
+        <Loading />
+      </div>
+    );
+  }
   const TableHeader = () => (
     <thead className="border-b border-gray-300">
       <tr className="text-black text-left">
@@ -160,6 +169,7 @@ const Users = () => {
         setOpen={setOpen}
         userData={selected}
         key={new Date().getTime().toString()}
+        refetch={refetch}
       />
 
       <ConfirmatioDialog

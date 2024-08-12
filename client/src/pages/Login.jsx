@@ -45,8 +45,8 @@ const Login = () => {
               Manage all your task in one place!
             </span>
             <p className="flex flex-col gap-0 md:gap-4 text-4xl md:text-6xl 2xl:text-7xl font-black text-center text-blue-700">
-              <span>Cloud-Based</span>
-              <span>Task Manager</span>
+              <span>Stay Organized, </span>
+              <span>Stay Productive</span>
             </p>
 
             <div className="cell">
@@ -72,7 +72,7 @@ const Login = () => {
 
             <div className="flex flex-col gap-y-5">
               <Textbox
-                placeholder="email@example.com"
+                placeholder="testuser@gm.com"
                 type="email"
                 name="email"
                 label="Email Address"
@@ -83,7 +83,7 @@ const Login = () => {
                 error={errors.email ? errors.email.message : ""}
               />
               <Textbox
-                placeholder="your password"
+                placeholder="testUser"
                 type="password"
                 name="password"
                 label="Password"
